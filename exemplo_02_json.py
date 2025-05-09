@@ -8,7 +8,8 @@ class PokemonSchema(BaseModel):
     type: str
 
     class Config:
-        orm_mode = True
+        #orm_mode = True
+        from_attributes = True 
 
 def pegar_pokemon(id: int) -> PokemonSchema:
     response = requests.get(f"https://pokeapi.co/api/v2/pokemon/{id}")
